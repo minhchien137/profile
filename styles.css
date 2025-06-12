@@ -690,104 +690,207 @@ body.scrolled .back-to-top {
 }
 
 
-/* MEDIA QUERIES for WORK EXPERIENCE */
+/* === MEDIA QUERIES === */
+
+/* General adjustments for screens up to 850px (tablets and smaller laptops) */
 @media (max-width: 850px) {
-  .work-experience-section .experience-card .experience-title {
-    font-size: 24px;
+  /* GLOBAL */
+  nav,
+  .hero-section,
+  .profile-section,
+  .skills-section,
+  .personal-projects-section,
+  .work-experience-section,
+  .hobbies-section,
+  footer {
+    padding-left: 30px;
+    padding-right: 30px;
   }
-  .work-experience-section .experience-card .experience-title .company-name {
-    font-size: 18px;
+  section {
+    margin-bottom: 80px; /* Slightly less margin for sections */
   }
-  .work-experience-section .experience-card .experience-details h4 {
-    font-size: 18px;
-  }
-  .work-experience-section .experience-card .experience-details ul li {
-    font-size: 15px;
-  }
-  .work-experience-section .experience-card .skill-item {
-    font-size: 13px;
-    padding: 5px 10px;
-  }
-}
-
-
-@media (max-width: 850px) {
-  /* SECTION 1: Hero */
-  .hero-section .text h2 {
-    font-size: 35px;
-  }
-}
-
-@media (max-width: 740px) {
-  /* SECTION 1: Hero */
-  .hero-section {
-    flex-direction: column-reverse;
+  h2 {
+    font-size: 32px;
   }
 
-  .hero-section .headshot img {
-    width: 300px;
-  }
 
-  /* SECTION 3: Testimony */
-  .testimony-section {
-    text-align: center;
-  }
-
-  .testimony-section .group {
-    flex-direction: column;
-  }
-
-  /* SECTION 4: Contact */
-  .contact-section .group {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 600px) {
   /* NAVBAR */
-  nav {
-    padding: 0 20px;
+  nav .left a {
+    font-size: 20px;
   }
-
   nav .right a {
-    font-size: 22px;
-  }
-
-  nav .right a:last-child {
-    color: var(--text-color);
-    background-color: transparent;
-    padding: 0;
-  }
-
-  nav .right a span {
-    display: none;
+    margin: 0 5px; /* Reduce margin between nav links */
   }
 
   /* SECTION 1: Hero */
   .hero-section {
-    padding: 0 20px;
+    flex-direction: column-reverse; /* Stack elements for hero on smaller screens */
+    text-align: center;
+    margin-bottom: 80px;
   }
-
+  .hero-section .text {
+    flex: none; /* Remove flex sizing */
+    width: 100%; /* Take full width */
+  }
   .hero-section .text h2 {
+    font-size: 38px;
+    margin-top: 20px; /* Space between headshot and title */
+  }
+  .hero-section .text p {
+    font-size: 16px;
+  }
+  .hero-section .text .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the buttons */
+    gap: 10px; /* Space between buttons */
+  }
+  .hero-section .headshot {
+    flex: none; /* Remove flex sizing */
+    width: 100%; /* Take full width */
+    justify-content: center; /* Center the image */
+  }
+  .hero-section .headshot img {
+    width: 250px; /* Smaller headshot */
+  }
+
+  /* SECTION 2: Profile */
+  .profile-section {
+    padding: 30px; /* Reduce padding */
+  }
+  .profile-section h2 {
     font-size: 30px;
+    margin-bottom: 30px;
   }
-
-  /* SECTION 2: Skills */
-  .skills-section {
-    padding: 0 20px;
+  .profile-section .profile-details {
+    grid-template-columns: 1fr; /* Stack profile items vertically */
+    gap: 15px;
   }
-
-  .skills-section .cells .cell span {
+  .profile-section .detail-item {
+    padding: 15px;
+    font-size: 16px;
+  }
+  .profile-section .detail-item i {
+    font-size: 20px;
+  }
+  .profile-section .detail-item .info-label {
+    font-size: 14px;
+  }
+  .profile-section .detail-item .info-value {
     font-size: 16px;
   }
 
-  /* SECTION 3: Testimony */
-  .testimony-section {
-    padding: 0 20px;
+  /* SECTION 3: Skills */
+  .skills-section .skills-container {
+    flex-direction: column; /* Stacks categories vertically */
+    gap: 30px;
+  }
+  .skills-section .skill-category {
+    min-width: unset; /* Remove min-width to allow full width */
+    padding: 25px;
+  }
+  .skills-section .skill-category h3 {
+    font-size: 24px;
+  }
+  .skills-section .cells .cell {
+    width: 90px; /* Adjust cell width */
+    height: 80px; /* Adjust cell height */
+    gap: 5px;
+  }
+  .skills-section .cells .cell img,
+  .skills-section .cells .cell i {
+    width: 28px; /* Adjust image/icon size */
+    height: 28px;
+    font-size: 22px;
+  }
+  .skills-section .cells .cell span {
+    font-size: 13px; /* Adjust text size */
   }
 
-  /* SECTION 4: Contact */
-  .contact-section {
-    padding: 0 20px;
+  /* SECTION 4: Personal Projects */
+  .personal-projects-section .project-card {
+    padding: 25px; /* Reduce padding */
+  }
+  .personal-projects-section .project-card .project-name {
+    font-size: 22px;
+  }
+  .personal-projects-section .project-card .project-info {
+    font-size: 15px;
+    gap: 5px;
+  }
+  .personal-projects-section .project-card .project-details h4 {
+    font-size: 17px;
+    margin-top: 15px;
+  }
+  .personal-projects-section .project-card .project-details ul li {
+    font-size: 14px;
+  }
+  .personal-projects-section .project-links {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+  }
+  .personal-projects-section .project-links a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* SECTION 5: Work Experience */
+  .work-experience-section .experience-card {
+    padding: 25px; /* Reduce padding */
+  }
+  .work-experience-section .experience-card .experience-title {
+    font-size: 22px;
+    flex-direction: column; /* Stack title and company name */
+    align-items: flex-start; /* Align to left */
+  }
+  .work-experience-section .experience-card .experience-title .company-name {
+    font-size: 16px;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  .work-experience-section .experience-card .experience-duration {
+    font-size: 15px;
+  }
+  .work-experience-section .experience-card .experience-details h4 {
+    font-size: 17px;
+    margin-top: 15px;
+  }
+  .work-experience-section .experience-card .experience-details ul li {
+    font-size: 14px;
+  }
+  .work-experience-section .experience-card .skill-item {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  /* SECTION 6: Hobbies */
+  .hobbies-section .hobbies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust min-width */
+    gap: 15px;
+  }
+  .hobbies-section .hobby-item {
+    height: 100px; /* Adjust height */
+    padding: 15px;
+  }
+  .hobbies-section .hobby-item i {
+    font-size: 35px;
+    margin-bottom: 5px;
+  }
+  .hobbies-section .hobby-item span {
+    font-size: 14px;
+  }
+
+  /* FOOTER & Back to Top Button */
+  footer {
+    padding: 15px 30px;
+  }
+  .back-to-top {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .back-to-top i {
+    font-size: 16px;
   }
 }
