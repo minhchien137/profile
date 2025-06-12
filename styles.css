@@ -1,0 +1,793 @@
+:root {
+  --text-color: #1a1c20;
+  --link-color: #4a76ee;
+  --background-color: #eeeff1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+  height: 80px;
+}
+
+nav .left a {
+  color: var(--text-color);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+nav .right a {
+  color: var(--text-color);
+  margin: 0 10px;
+}
+
+nav .right a:last-child {
+  color: var(--background-color);
+  background-color: var(--text-color);
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+nav .right a span {
+  margin-left: 5px;
+}
+
+/* SECTION 1: Hero */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  margin: 50px 0;
+  margin-bottom: 100px;
+  gap: 40px;
+}
+
+.hero-section .text {
+  flex: 5;
+}
+
+.hero-section .text h2 {
+  font-size: 45px;
+}
+
+.hero-section .text .links {
+  margin-top: 25px;
+}
+
+.hero-section .text .links a {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid var(--link-color);
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  transition: .1s;
+}
+
+.hero-section .text .links a:hover {
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+}
+
+.hero-section .headshot {
+  flex: 2;
+  display: flex;
+  justify-content: right;
+}
+
+.hero-section .headshot img {
+  width: 350px;
+  border-radius: 50%;
+}
+
+
+/* SECTION 2: Profile (Thông tin cá nhân) */
+.profile-section {
+  padding: 50px; /* Tăng padding để có không gian */
+  margin-bottom: 100px;
+  background-color: #ffffff; /* Nền trắng cho phần này */
+  border-radius: 10px; /* Bo góc nhẹ */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Thêm đổ bóng nhẹ */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+.profile-section h2 {
+  font-size: 35px;
+  margin-bottom: 40px; /* Tăng khoảng cách dưới tiêu đề */
+  color: var(--link-color); /* Màu chữ cho tiêu đề */
+  position: relative;
+  display: inline-block; /* Để tạo đường kẻ dưới đẹp hơn */
+}
+
+.profile-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 10px auto 0; /* Căn giữa và khoảng cách dưới */
+  border-radius: 5px;
+}
+
+.profile-section .profile-details {
+  display: grid; /* Sử dụng Grid để sắp xếp các mục */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Tự động chia cột */
+  gap: 25px; /* Khoảng cách giữa các mục */
+  max-width: 900px; /* Giới hạn chiều rộng để không quá dài */
+  margin: 0 auto; /* Căn giữa khối chi tiết */
+}
+
+.profile-section .detail-item {
+display: flex;
+  align-items: center; /* Giữ icon và info-group trên cùng một dòng */
+  gap: 15px;
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease-in-out;
+}
+
+.profile-section .detail-item:hover {
+  transform: translateY(-5px); /* Nâng nhẹ lên khi hover */
+}
+
+.profile-section .detail-item i {
+ font-size: 24px;
+  color: var(--link-color);
+  /* Để icon không bị co lại khi nội dung quá dài */
+  flex-shrink: 0; 
+}
+/* THÊM CÁC THUỘC TÍNH CSS NÀY VÀO */
+.profile-section .detail-item .info-group {
+  display: flex; /* Dùng flexbox cho info-group */
+  flex-direction: column; /* Sắp xếp các span theo chiều dọc */
+  flex-grow: 1; /* Cho phép info-group chiếm hết không gian còn lại */
+}
+
+.profile-section .detail-item .info-label {
+  font-size: 16px; /* Kích thước chữ nhỏ hơn cho tiêu đề */
+  color: #555; /* Màu xám hơn cho tiêu đề */
+  font-weight: 600; /* Đậm hơn cho tiêu đề */
+  margin-bottom: 2px; /* Khoảng cách giữa tiêu đề và giá trị */
+}
+
+.profile-section .detail-item .info-value {
+  font-size: 18px; /* Kích thước chữ lớn hơn cho giá trị */
+  color: var(--text-color); /* Màu chữ chính */
+  font-weight: 500;
+  word-break: break-all; /* Đảm bảo giá trị dài vẫn xuống dòng */
+}
+
+.profile-section .detail-item span {
+  font-size: 18px; /* Kích thước chữ */
+  color: var(--text-color); /* Màu chữ */
+  font-weight: 500; /* Đậm vừa phải */
+   word-break: break-all; 
+}
+
+
+
+
+/* SECTION 3: Skills */
+.skills-section {
+  padding: 0 50px;
+  margin-bottom: 100px;
+  text-align: center; /* Căn giữa tiêu đề chính và text */
+}
+
+.skills-section h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  position: relative; /* Để tạo đường kẻ dưới cho H2 */
+  display: inline-block;
+}
+
+.skills-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+.skills-section .text {
+  text-align: center;
+  margin-bottom: 40px; /* Tăng khoảng cách dưới mô tả */
+  max-width: 800px; /* Giới hạn chiều rộng của đoạn mô tả */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* THÊM CÁC THUỘC TÍNH CSS NÀY VÀO */
+.skills-section .skills-container {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các category xuống dòng nếu không đủ chỗ */
+  justify-content: center;
+  gap: 40px; /* Khoảng cách giữa hai cột Hard/Soft Skills */
+}
+
+.skills-section .skill-category {
+  flex: 1; /* Cho phép mỗi category co giãn */
+  min-width: 300px; /* Chiều rộng tối thiểu cho mỗi category */
+  background-color: #ffffff; /* Nền trắng cho mỗi category */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ hơn */
+}
+
+.skills-section .skill-category h3 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: var(--link-color);
+  position: relative;
+  display: inline-block;
+}
+
+.skills-section .skill-category h3::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: var(--text-color);
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+
+/* Sửa đổi .cells để phù hợp với bố cục mới, nó nằm trong skill-category */
+.skills-section .cells {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Khoảng cách giữa các skill cell */
+}
+
+.skills-section .cells .cell {
+  display: flex;
+  flex-direction: column; /* Icon trên, text dưới */
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Khoảng cách giữa icon/ảnh và text */
+
+  width: 120px; /* Giảm kích thước cell để hiển thị nhiều hơn */
+  height: 100px; /* Cố định chiều cao */
+  padding: 10px;
+  border: 1.5px solid #d3d3d3;
+  border-radius: 8px; /* Bo góc mềm mại hơn */
+  background-color: var(--background-color);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.skills-section .cells .cell:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skills-section .cells .cell img {
+  width: 40px; /* Tăng kích thước ảnh */
+  height: 40px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.skills-section .cells .cell i { /* CSS cho các icon mới */
+  font-size: 25px; /* Kích thước icon tương đương ảnh */
+  color: var(--link-color); /* Màu icon */
+}
+
+.skills-section .cells .cell span {
+  font-size: 15px; /* Giảm kích thước chữ cho vừa khung */
+  text-align: center;
+  font-weight: 500;
+}
+
+/* SECTION 3: Testimony */
+/* SECTION 4: PERSONAL PROJECTS (Tên mới) */
+.personal-projects-section { /* Đổi tên class */
+  padding: 0 50px;
+  margin-bottom: 100px;
+  text-align: center; /* Căn giữa tiêu đề chính */
+}
+
+.personal-projects-section h2 {
+  font-size: 35px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  color: #4a76ee;;
+}
+
+.personal-projects-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+.personal-projects-section .projects-container {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các project card chồng lên nhau */
+  gap: 40px; /* Khoảng cách giữa các project card */
+  max-width: 900px; /* Giới hạn chiều rộng tổng thể */
+  margin: 0 auto; /* Căn giữa container */
+}
+
+.personal-projects-section .project-card {
+  background-color: #ffffff; /* Nền trắng cho mỗi project card */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Đổ bóng mạnh hơn một chút */
+  text-align: left; /* Nội dung bên trong căn trái */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Khoảng cách giữa các phần trong card */
+}
+
+.personal-projects-section .project-card .project-name {
+  font-size: 28px;
+  color: var(--link-color);
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block; /* Để tạo đường kẻ dưới cho tên dự án */
+}
+
+.personal-projects-section .project-card .project-name::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: var(--text-color);
+  margin-top: 8px; /* Khoảng cách từ tên dự án đến đường kẻ */
+  border-radius: 5px;
+}
+
+
+.personal-projects-section .project-card .project-info {
+  font-size: 16px; /* Giữ kích thước chữ chung */
+  color: #555; /* Giữ màu chữ chung */
+  margin-bottom: 15px;
+  display: flex; /* Bật flexbox cho project-info */
+  flex-direction: column; /* Xếp các dòng con theo chiều dọc */
+  gap: 8px; /* Khoảng cách giữa các dòng thông tin */
+}
+
+.personal-projects-section .project-card .project-info span {
+  font-weight: 600; /* Đậm cho nhãn */
+  color: var(--text-color); /* Màu cho nhãn */
+  margin-right: 5px;
+}
+.personal-projects-section .project-card .project-info span:not(:last-child) {
+  margin-right: 20px; /* Khoảng cách giữa vai trò và thời gian */
+}
+
+
+.personal-projects-section .project-card .project-details h4 {
+  font-size: 20px;
+  color: var(--link-color);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.personal-projects-section .project-card .project-details ul {
+  list-style-type: disc; /* Dấu chấm cho danh sách */
+  margin-left: 20px; /* Thụt vào */
+  padding: 0;
+}
+
+.personal-projects-section .project-card .project-details ul li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.personal-projects-section .project-links {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các link xuống dòng */
+  gap: 15px; /* Khoảng cách giữa các nút link */
+}
+
+.personal-projects-section .project-links a {
+  display: inline-flex; /* Để icon và text cùng nằm trên 1 dòng */
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 2px solid var(--link-color);
+  border-radius: 5px;
+  color: var(--link-color);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.personal-projects-section .project-card .project-info .project-label {
+  font-weight: 600; /* Đậm cho nhãn */
+  color: var(--text-color); /* Màu cho nhãn */
+  margin-right: 5px; /* Khoảng cách giữa nhãn và giá trị */
+  /* Bỏ margin-right: 20px ở span:not(:last-child) vì giờ mỗi nhãn là một dòng riêng */
+}
+
+.personal-projects-section .project-links a:hover {
+  background-color: var(--link-color);
+  color: #ffffff;
+}
+
+.personal-projects-section .project-links a i {
+  font-size: 18px;
+}
+
+
+/* SECTION 5: WORK EXPERIENCE */
+.work-experience-section { /* Tên class mới */
+  padding: 0 50px;
+  margin-bottom: 100px;
+  text-align: center; /* Căn giữa tiêu đề chính */
+}
+
+.work-experience-section h2 {
+  font-size: 35px;
+  margin-bottom: 40px;
+  position: relative;
+  color: var(--link-color);
+  display: inline-block;
+}
+
+.work-experience-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+.work-experience-section .experience-container {
+  display: flex;
+  flex-direction: column; /* Xếp chồng các experience card */
+  gap: 50px; /* Khoảng cách giữa các card kinh nghiệm */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.work-experience-section .experience-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Đổ bóng nổi bật hơn một chút so với project */
+  text-align: left;
+  position: relative; /* Để tạo timeline hoặc hiệu ứng */
+  border-left: 5px solid var(--link-color); /* Đường kẻ nổi bật bên trái */
+  transition: transform 0.2s ease-in-out;
+}
+
+.work-experience-section .experience-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.work-experience-section .experience-card .experience-title {
+  font-size: 28px;
+  color: var(--text-color); /* Màu chữ tiêu đề chính */
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.work-experience-section .experience-card .experience-title .company-name {
+    font-size: 20px; /* Nhỏ hơn một chút */
+    color: var(--link-color); /* Màu nhấn cho tên công ty */
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.work-experience-section .experience-card .experience-duration {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px; /* Tăng khoảng cách dưới thông tin thời gian/vị trí */
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Khoảng cách nhỏ hơn giữa các dòng con */
+}
+
+.work-experience-section .experience-card .experience-duration .info-line {
+    /* Không cần CSS đặc biệt cho info-line ở đây */
+}
+
+.work-experience-section .experience-card .experience-duration .experience-label {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-right: 5px;
+}
+
+.work-experience-section .experience-card .experience-details h4 {
+  font-size: 20px;
+  color: var(--link-color);
+  margin-top: 25px; /* Tăng khoảng cách trên cho các tiêu đề con */
+  margin-bottom: 10px;
+}
+
+.work-experience-section .experience-card .experience-details h4:first-of-type {
+    margin-top: 0; /* Đảm bảo "Mô tả công việc" không có margin-top quá lớn */
+}
+
+.work-experience-section .experience-card .experience-details ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding: 0;
+}
+
+.work-experience-section .experience-card .experience-details ul li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.work-experience-section .experience-card .skills-gained {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các kỹ năng xuống dòng */
+  gap: 8px; /* Khoảng cách giữa các skill item */
+  margin-top: 15px; /* Khoảng cách trên cho khối kỹ năng */
+}
+
+.work-experience-section .experience-card .skill-item {
+  background-color: var(--link-color);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 20px; /* Bo tròn làm chip/tag */
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap; /* Ngăn không cho chữ bị ngắt dòng trong tag */
+}
+
+/* SECTION 6: HOBBIES */
+.hobbies-section {
+  padding: 0 50px;
+  margin-bottom: 100px;
+  text-align: center; /* Căn giữa tiêu đề chính và text */
+}
+
+.hobbies-section h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.hobbies-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+.hobbies-section .text {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #555;
+}
+
+.hobbies-section .hobbies-grid {
+  display: grid; /* Sử dụng CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Tự động chia cột, tối thiểu 150px */
+  gap: 25px; /* Khoảng cách giữa các sở thích */
+  max-width: 900px; /* Giới hạn chiều rộng tổng thể */
+  margin: 0 auto; /* Căn giữa grid */
+}
+
+.hobbies-section .hobby-item {
+  display: flex;
+  flex-direction: column; /* Icon trên, text dưới */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  justify-content: center; /* Căn giữa theo chiều dọc nếu có space */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: default; /* Thay đổi con trỏ */
+  height: 120px; /* Cố định chiều cao để các item đều nhau */
+}
+
+.hobbies-section .hobby-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hobbies-section .hobby-item i {
+  font-size: 45px; /* Kích thước icon lớn */
+  color: var(--link-color); /* Màu icon */
+  margin-bottom: 10px; /* Khoảng cách giữa icon và text */
+}
+
+.hobbies-section .hobby-item span {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/*FOOTER*/
+
+/* General styling for the footer (optional, adjust as needed) */
+footer {
+  padding: 20px 50px;
+  text-align: center;
+  border-top: 1px solid #eee; /* Optional: Add a line to separate the footer */
+  margin-top: 50px; /* Add some space above the footer */
+}
+
+/* Back to top button styling */
+.back-to-top {
+  position: fixed; /* Fixed positioning, stays in place during scroll */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  display: inline-flex; /* Use flexbox for icon and text alignment */
+  align-items: center; /* Vertically center icon and text */
+  gap: 8px; /* Spacing between icon and text */
+  background-color: var(--link-color); /* Use your theme's link color */
+  color: #fff; /* White text */
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none; /* Remove underline from link */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade in/out */
+  font-size: 16px;
+}
+
+.back-to-top:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.back-to-top i {
+  font-size: 20px; /* Larger icon */
+}
+
+/* Show the button when the user has scrolled down */
+body.scrolled .back-to-top {
+  opacity: 1; /* Make it visible */
+}
+
+
+/* MEDIA QUERIES for WORK EXPERIENCE */
+@media (max-width: 850px) {
+  .work-experience-section .experience-card .experience-title {
+    font-size: 24px;
+  }
+  .work-experience-section .experience-card .experience-title .company-name {
+    font-size: 18px;
+  }
+  .work-experience-section .experience-card .experience-details h4 {
+    font-size: 18px;
+  }
+  .work-experience-section .experience-card .experience-details ul li {
+    font-size: 15px;
+  }
+  .work-experience-section .experience-card .skill-item {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+}
+
+
+@media (max-width: 850px) {
+  /* SECTION 1: Hero */
+  .hero-section .text h2 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 740px) {
+  /* SECTION 1: Hero */
+  .hero-section {
+    flex-direction: column-reverse;
+  }
+
+  .hero-section .headshot img {
+    width: 300px;
+  }
+
+  /* SECTION 3: Testimony */
+  .testimony-section {
+    text-align: center;
+  }
+
+  .testimony-section .group {
+    flex-direction: column;
+  }
+
+  /* SECTION 4: Contact */
+  .contact-section .group {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  /* NAVBAR */
+  nav {
+    padding: 0 20px;
+  }
+
+  nav .right a {
+    font-size: 22px;
+  }
+
+  nav .right a:last-child {
+    color: var(--text-color);
+    background-color: transparent;
+    padding: 0;
+  }
+
+  nav .right a span {
+    display: none;
+  }
+
+  /* SECTION 1: Hero */
+  .hero-section {
+    padding: 0 20px;
+  }
+
+  .hero-section .text h2 {
+    font-size: 30px;
+  }
+
+  /* SECTION 2: Skills */
+  .skills-section {
+    padding: 0 20px;
+  }
+
+  .skills-section .cells .cell span {
+    font-size: 16px;
+  }
+
+  /* SECTION 3: Testimony */
+  .testimony-section {
+    padding: 0 20px;
+  }
+
+  /* SECTION 4: Contact */
+  .contact-section {
+    padding: 0 20px;
+  }
+}
