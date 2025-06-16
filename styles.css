@@ -714,13 +714,33 @@ body.scrolled .back-to-top {
   }
 
 
-  /* NAVBAR */
+ /* NAVBAR */
   nav .left a {
     font-size: 20px;
   }
   nav .right a {
-    margin: 0 5px; /* Reduce margin between nav links */
+    margin: 0 5px;
+    /* Specific styles for the icons */
+    display: flex; /* Make it a flex container to align icon and text */
+    align-items: center; /* Vertically align icon and text */
+    padding: 5px 8px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for the link text */
   }
+
+  nav .right a i {
+      font-size: 18px; /* Smaller icon size for mobile */
+      margin-right: 3px; /* Reduce space between icon and text */
+  }
+
+  nav .right a span {
+      display: none; /* Hide the text "Github" and "Email" to save space */
+  }
+  
+  nav .right a:last-child {
+      padding: 5px 8px; /* Adjust padding for the last button */
+  }
+
+ 
 
   /* SECTION 1: Hero */
   .hero-section {
@@ -892,5 +912,88 @@ body.scrolled .back-to-top {
   }
   .back-to-top i {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  nav {
+    padding: 0 15px; /* Giảm padding cho navbar trên màn hình rất nhỏ */
+  }
+
+  nav .right a {
+    margin: 0 3px; /* Giảm khoảng cách giữa các link trên nav */
+    padding: 5px; /* Giảm padding tổng thể của link */
+  }
+
+  nav .right a span {
+    display: none; /* Ẩn chữ "Github" và "Email" để chỉ hiển thị icon */
+  }
+
+  nav .right a i {
+    font-size: 20px; /* Tăng kích thước icon lên một chút để dễ nhìn hơn khi không có chữ */
+    margin: 0; /* Bỏ margin-right nếu chỉ có icon */
+  }
+
+  nav .right a:last-child {
+    padding: 5px; /* Điều chỉnh padding cho nút cuối cùng */
+  }
+
+  .hero-section {
+    padding: 0 15px; /* Giảm padding cho hero section */
+  }
+
+  .hero-section .text h2 {
+    font-size: 32px; /* Giảm kích thước font H2 trên mobile */
+  }
+
+  .hero-section .headshot img {
+    width: 200px; /* Thu nhỏ ảnh đại diện hơn nữa */
+  }
+
+  .profile-section,
+  .skills-section,
+  .personal-projects-section,
+  .work-experience-section,
+  .hobbies-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .skills-section .cells .cell {
+    width: 80px; /* Kích thước cell kỹ năng nhỏ hơn */
+    height: 70px;
+  }
+
+  .skills-section .cells .cell img,
+  .skills-section .cells .cell i {
+    width: 25px; /* Kích thước icon/ảnh nhỏ hơn */
+    height: 25px;
+    font-size: 20px;
+  }
+
+  .skills-section .cells .cell span {
+    font-size: 12px; /* Font chữ nhỏ hơn cho tên kỹ năng */
+  }
+
+  .personal-projects-section .project-card .project-name,
+  .work-experience-section .experience-card .experience-title {
+    font-size: 20px; /* Giảm kích thước tiêu đề dự án/kinh nghiệm */
+  }
+
+  .hobbies-section .hobbies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Giảm kích thước tối thiểu cho sở thích */
+    gap: 10px;
+  }
+
+  .hobbies-section .hobby-item {
+    height: 80px; /* Giảm chiều cao của ô sở thích */
+  }
+
+  .hobbies-section .hobby-item i {
+    font-size: 30px; /* Giảm kích thước icon sở thích */
+  }
+
+  .hobbies-section .hobby-item span {
+    font-size: 13px; /* Giảm kích thước chữ sở thích */
   }
 }
